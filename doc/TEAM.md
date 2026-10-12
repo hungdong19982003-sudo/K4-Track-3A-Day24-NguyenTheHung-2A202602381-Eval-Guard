@@ -19,7 +19,7 @@ Thêm/xóa rows để khớp nhóm thật; mẫu ba rows không ép nhóm phải
 |---|---|---|---|---|
 | 1 | Nguyễn Thế Hưng | 2A202602381 | Trưởng nhóm, Lead Phase A: tích hợp m1-m5, sinh 50 answers, RagasEvaluation Tasks 1-4, failure clusters, tích hợp nghiệm thu repo | src/phase_a_ragas.py, scripts/setup_answers.py, artifacts/ragas_50q.json, doc/reports/failure_clusters.md |
 | 2 | Thành viên 2 | 2A202602382 | Lead Phase B: Pairwise judge, swap-and-average khử position bias, Cohen kappa với human labels, bias report Tasks 5-8 | src/phase_b_judge.py, artifacts/judge_results.json, doc/reports/bias_report.md |
-| 3 | Thành viên 3 | 2A202602383 | Lead Phase C: Presidio PII, NeMo input/output rails, adversarial suite, đo P95 latency Tasks 9-12, đề xuất Blueprint | src/phase_c_guard.py, artifacts/guard_results.json, doc/reports/blueprint.md |
+| 3 | Võ Đức Trí | 2A202602603 | Lead Phase C: Presidio PII, NeMo input/output rails, adversarial suite, đo P95 latency Tasks 9-12, đề xuất Blueprint | src/phase_c_guard.py, artifacts/guard_results.json, doc/reports/blueprint.md |
 
 Người tích hợp/chạy batch/nộp link: Nguyễn Thế Hưng, phụ trách tổng hợp code, chạy toàn bộ test runner và check_lab.py, tạo commit và nộp link GitHub repo.
 
@@ -51,7 +51,7 @@ Sao chép mẫu cho mỗi thành viên; tiêu đề họ tên không dấu-MSSV.
 - Giới hạn/cách xử lý: Một số trường hợp câu trả lời dài hơn có xu hướng được ưu tiên; xử lý bằng prompt chuẩn hóa yêu cầu khắt khe về tính súc tích và căn cứ chính sách.
 - Nguồn/AI hỗ trợ nếu có: Tham khảo lý thuyết về LLM evaluation bias, tự viết và kiểm thử lại logic tính Cohen kappa bằng tay.
 
-### ThanhVien3-2A202602383
+### VoDucTri-2A202602603
 
 - Phần được giao và phần thực tế đã làm: Phụ trách Phase C và Task 13; cài đặt module quét và ẩn PII với Presidio cho CCCD/CMND/SĐT VN/Email (Task 9a), thiết lập kiểm tra input rails (Task 9b) và output rails (Task 11) với NeMo Guardrails, chạy adversarial suite 28 inputs (Task 10), đo độ trễ P95 tuần tự input layers (Task 12) trong src/phase_c_guard.py và viết đề xuất doc/reports/blueprint.md.
 - Bằng chứng: Mã nguồn src/phase_c_guard.py, dữ liệu artifacts/guard_results.json, báo cáo doc/reports/blueprint.md.
