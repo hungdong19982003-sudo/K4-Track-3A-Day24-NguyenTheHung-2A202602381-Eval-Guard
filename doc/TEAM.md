@@ -8,7 +8,7 @@ Trưởng nhóm/người nộp: Nguyễn Thế Hưng - 2A202602381
 
 Ngày lab/deadline áp dụng: 23:59 ngày 12/10/2026 — Asia/Ho_Chi_Minh (UTC+07:00)
 
-Commit dùng để chấm: 
+Commit dùng để chấm: 7b3e3427f71b8ee66d3a4365df988e4e7e600868
 
 Mỗi nhóm nộp một repo. Điền đủ thành viên và một mục INDIVIDUAL cho từng người.
 Thêm/xóa rows để khớp nhóm thật; mẫu ba rows không ép nhóm phải có ba người.
