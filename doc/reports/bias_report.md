@@ -1,6 +1,6 @@
 # Đánh giá LLM Judge Phase B
 
-Nhóm: {{Tên nhóm}}
+Nhóm: ABCDEF
 
 Người phụ trách: {{Họ tên và MSSV}}
 

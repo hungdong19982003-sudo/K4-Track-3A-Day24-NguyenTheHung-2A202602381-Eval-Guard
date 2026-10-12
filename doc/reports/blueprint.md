@@ -1,6 +1,6 @@
 # Blueprint CI/CD cho RAG và guardrails
 
-Nhóm: {{Tên nhóm}}
+Nhóm: ABCDEF
 
 Người phụ trách: {{Họ tên và MSSV}}
 

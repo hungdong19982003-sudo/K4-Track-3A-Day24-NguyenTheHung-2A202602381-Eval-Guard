@@ -1,6 +1,6 @@
 # Nhóm thực hiện K4 Track 3A
 
-Tên nhóm: Track3A-Nhom01
+Tên nhóm: ABCDEF
 
 Repo chung: https://github.com/hungdong19982003-sudo/K4-Track-3A-Day24-NguyenTheHung-2A202602381-Eval-Guard
 
@@ -8,7 +8,7 @@ Trưởng nhóm/người nộp: Nguyễn Thế Hưng - 2A202602381
 
 Ngày lab/deadline áp dụng: 23:59 ngày 12/10/2026 — Asia/Ho_Chi_Minh (UTC+07:00)
 
-Commit dùng để chấm: af8d45084964177b90f4233777d5669b3df9856f
+Commit dùng để chấm: 
 
 Mỗi nhóm nộp một repo. Điền đủ thành viên và một mục INDIVIDUAL cho từng người.
 Thêm/xóa rows để khớp nhóm thật; mẫu ba rows không ép nhóm phải có ba người.
