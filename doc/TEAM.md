@@ -18,7 +18,7 @@ Thêm/xóa rows để khớp nhóm thật; mẫu ba rows không ép nhóm phải
 | STT | Họ và tên | MSSV | Vai trò / công việc thật | Bằng chứng |
 |---|---|---|---|---|
 | 1 | Nguyễn Thế Hưng | 2A202602381 | Trưởng nhóm, Lead Phase A: tích hợp m1-m5, sinh 50 answers, RagasEvaluation Tasks 1-4, failure clusters, tích hợp nghiệm thu repo | src/phase_a_ragas.py, scripts/setup_answers.py, artifacts/ragas_50q.json, doc/reports/failure_clusters.md |
-| 2 | Thành viên 2 | 2A202602382 | Lead Phase B: Pairwise judge, swap-and-average khử position bias, Cohen kappa với human labels, bias report Tasks 5-8 | src/phase_b_judge.py, artifacts/judge_results.json, doc/reports/bias_report.md |
+| 2 | Lê Như Ý | 202602517 | Lead Phase B: Pairwise judge, swap-and-average khử position bias, Cohen kappa với human labels, bias report Tasks 5-8 | src/phase_b_judge.py, artifacts/judge_results.json, doc/reports/bias_report.md |
 | 3 | Võ Đức Trí | 2A202602603 | Lead Phase C: Presidio PII, NeMo input/output rails, adversarial suite, đo P95 latency Tasks 9-12, đề xuất Blueprint | src/phase_c_guard.py, artifacts/guard_results.json, doc/reports/blueprint.md |
 
 Người tích hợp/chạy batch/nộp link: Nguyễn Thế Hưng, phụ trách tổng hợp code, chạy toàn bộ test runner và check_lab.py, tạo commit và nộp link GitHub repo.
@@ -42,14 +42,14 @@ Sao chép mẫu cho mỗi thành viên; tiêu đề họ tên không dấu-MSSV.
 - Giới hạn/cách xử lý: Câu hỏi adversarial dễ bị nhầm lẫn giữa các phiên bản chính sách; hướng xử lý là bổ sung lọc metadata thời gian và tăng cường reranker.
 - Nguồn/AI hỗ trợ nếu có: Sử dụng AI hỗ trợ rà soát logic tính ma trận cụm lỗi, tự kiểm chứng bằng hợp đồng kiểm thử tại src/report_contracts.py.
 
-### ThanhVien2-2A202602382
+### LeNhuY-202602517
 
-- Phần được giao và phần thực tế đã làm: Phụ trách Phase B; cài đặt hàm pairwise judge so sánh 2 câu trả lời A/B theo 3 tiêu chí (Task 5), triển khai swap-and-average đảo thứ tự để khử position bias (Task 6), tính hệ số Cohen kappa đối chiếu với 10 nhãn chuyên gia (Task 7), xây dựng báo cáo định lượng position bias và verbosity bias (Task 8) trong src/phase_b_judge.py.
-- Bằng chứng: Mã nguồn src/phase_b_judge.py, dữ liệu artifacts/judge_results.json, báo cáo doc/reports/bias_report.md.
-- Cách kiểm tra: Chạy unit test offline python -m pytest tests/test_phase_b.py -q đạt 8/8 PASS.
-- Điều đã học: Hiểu sâu về các dạng thiên lệch (bias) thường gặp khi sử dụng LLM làm giám khảo, kỹ thuật swap-and-average giúp đảm bảo tính nhất quán, và thang đo Landis-Koch khi diễn giải hệ số Cohen kappa.
-- Giới hạn/cách xử lý: Một số trường hợp câu trả lời dài hơn có xu hướng được ưu tiên; xử lý bằng prompt chuẩn hóa yêu cầu khắt khe về tính súc tích và căn cứ chính sách.
-- Nguồn/AI hỗ trợ nếu có: Tham khảo lý thuyết về LLM evaluation bias, tự viết và kiểm thử lại logic tính Cohen kappa bằng tay.
+- Phần được giao và phần thực tế đã làm: Phụ trách Phase B; hoàn thiện và thực thi toàn bộ pipeline LLM-as-Judge bao gồm hàm pairwise judge so sánh 2 câu trả lời A/B theo 3 tiêu chí (Task 5), cơ chế swap-and-average 2 lượt đảo vị trí để khử position bias (Task 6), tính toán hệ số Cohen's kappa đối chiếu 10 nhãn chuyên gia với độ đồng thuận đạt mức tuyệt đối κ = 1.0 (Task 7), xây dựng báo cáo kỹ thuật định lượng position bias (0.0%) và verbosity bias (Task 8) tại doc/reports/bias_report.md.
+- Bằng chứng: Mã nguồn src/phase_b_judge.py, kết quả thực nghiệm artifacts/judge_results.json, báo cáo doc/reports/bias_report.md.
+- Cách kiểm tra: Chạy unit test offline python -m pytest tests/test_phase_b.py -q đạt 8/8 PASS, chạy nghiệm thu qua python scripts/check_lab.py đạt PASS Phase B artifact và bias_report.md.
+- Điều đã học: Nắm vững phương pháp thiết kế LLM-as-Judge chuẩn mực, cơ chế swap-and-average triệt tiêu Position Bias, cách tính và thang đo Landis-Koch cho hệ số Cohen's Kappa, cũng như phân biệt giữa thiên lệch độ dài giả tạo (verbosity bias) và câu trả lời dài hơn do chứa đầy đủ điều kiện nghiệp vụ.
+- Giới hạn/cách xử lý: Số lượng mẫu kiểm chuẩn human labels (10 câu) còn nhỏ; hướng xử lý là duy trì cơ chế Human-in-the-Loop lấy mẫu kiểm toán 5-10% trong production CI/CD.
+- Nguồn/AI hỗ trợ nếu có: Tham khảo lý thuyết đánh giá LLM-as-Judge và chuẩn hóa hợp đồng kiểm thử tại src/report_contracts.py.
 
 ### VoDucTri-2A202602603
 
